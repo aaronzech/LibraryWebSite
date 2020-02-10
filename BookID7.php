@@ -172,7 +172,7 @@ $conn->close();
 <?php
 	include_once 'footer.php';
 ?>
-<a href="Books.php"><img src="/librarySite/back.png" align="LEFT";"></a>
+<a href="Books.php"><img src="assets/back.png" align="LEFT";"></a>
 </article>
 <footer>Sp18 CSCI 2050-90 - Aaron, Lydia, Riley</footer>
 </div>

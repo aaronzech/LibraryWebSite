@@ -36,6 +36,24 @@ footer {background: #aaa;color:white;}
     text-decoration: none;
 }
 
+table {
+	border-collapse: collapse;
+	width = 100%;
+	color: #588c7e;
+	font=family: monospace;
+	font-size: 25px;
+	text-align: center;
+	
+}
+td {
+	border: 1px solid black;
+	
+}
+th {
+	background-color: 588c7e;
+	color: black;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
 
 @media all and (min-width: 768px) {
     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
@@ -49,8 +67,8 @@ footer {background: #aaa;color:white;}
 <div class="flex-container">
 <header>
   
-    <img src="/librarySite/HomePageIcon.png" align="left";">
-  <img src="/librarySite/HomePageIcon.png" align="right";">
+    <img src="assets/HomePageIcon.png" align="left";">
+  <img src="assets/HomePageIcon.png" align="right";">
   <h1>Library</h1>
 
 </header>

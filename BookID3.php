@@ -3,7 +3,7 @@
 global $bookISBN;
 $bookISBN = 9780312577230;
 global $imgPath;
-$imgPath = '/librarySite/BookCovers/The great alone.jpg'
+$imgPath = 'BookCovers/The great alone.jpg'
 
  ?>
 
@@ -172,7 +172,7 @@ $conn->close();
 <?php
 	include_once 'footer.php';
 ?>
-<a href="Books.php"><img src="/librarySite/back.png" align="LEFT";"></a>
+<a href="Books.php"><img src="assets/back.png" align="LEFT";"></a>
 </article>
 <footer>Sp18 CSCI 2050-90 - Aaron, Lydia, Riley</footer>
 </div>
