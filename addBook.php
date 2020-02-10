@@ -95,6 +95,7 @@ ISBN: <input type = "integer" name = "isbn"><br />
 title: <input type = "text" name = "title"><br />
 authorID: <input type = "integer" name = "authorID"><br />
 quantity: <input type = "integer" name = "quantity"><br />
+Please choose a file: <input name="file" type="file" />
 <input type = "submit" name = "submit">
 <input type = "submit" name = "goBack" value = "Clear">
  
@@ -103,15 +104,15 @@ quantity: <input type = "integer" name = "quantity"><br />
 <?php
 if(isset($_POST['submit']))
 {
-	$con = mysqli_connect('localhost', 'root', '', 'library1');
+	$con = mysqli_connect('localhost', 'root', '', 'real_deal_lib');
 	if(!$con)
 	{	
 		die("Cannot connect to the database");
 	}
 
-	$sql = "INSERT INTO books(isbn,title,authorID,quantity) 
+	$sql = "INSERT INTO books(isbn,title,authorID,quantity,img) 
 		VALUES 
-		('$_POST[isbn]', '$_POST[title]','$_POST[authorID]','$_POST[quantity]')";
+		('$_POST[isbn]', '$_POST[title]','$_POST[authorID]','$_POST[quantity]','$_POST[file]')";
 		
 	
 	mysqli_query($con, $sql);
@@ -122,6 +123,7 @@ if(isset($_POST['submit']))
 	
 
 ?>
+
 <br>
   <h2>Author Info</h2>
 <form action = "addBook.php" method = "post">
@@ -134,7 +136,7 @@ Author Last Name: <input type = "text" name = "alname"><br />
 <?php
 if(isset($_POST['submit']))
 {
-	$con = mysqli_connect('localhost', 'root', '', 'library1');
+	$con = mysqli_connect('localhost', 'root', '', 'real_deal_lib');
 	if(!$con)
 	{	
 		die("Cannot connect to the database");
