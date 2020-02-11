@@ -104,17 +104,17 @@ h3 { font-size: 2em }
 			{
 				// If logged in as an admin, display admin sidebar.
 				include 'C:\xampp\htdocs\LoginSystemTest\sidebar_loggedin_admin.php';
+				echo $email;
+				exit;
 			}
 			else if(isset($_SESSION['u_email']))
 			{
 				// If logged in, display loggedin sidebar
-				include 'sidebar_loggedin.php';
+				include 'C:\xampp\htdocs\LoginSystemTest\sidebar_loggedin.php';
+				echo $email;
 			}
-			else 
-			{
-				// Else display notloggedin sidebar
-				include 'C:\xammp\htdocs\LoginSystemTest\sidebar_notloggedin.php';
-			};
+			// No one is logged in default sidebar view.
+			include 'C:\xampp\htdocs\LoginSystemTest\sidebar_default.php';
 		?>
 	</div>
 </section>

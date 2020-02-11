@@ -8,9 +8,9 @@ session_start();
 <html>
 <head>
 	<title>Library</title>
-	<img src="/librarySite/HomePageIcon.png" align="left";">
+	<img src="assets/HomePageIcon.png" align="left";">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<img src="/librarySite/HomePageIcon.png" align="right";">
+	<img src="assets/HomePageIcon.png" align="right";">
 	
 </head>
 <body>

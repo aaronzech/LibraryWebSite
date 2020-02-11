@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+	include_once 'header.php';
+?>
 <html>
 <head>
 <style> 
@@ -53,30 +56,36 @@ footer {background: #aaa;color:white;}
 </header>
 
 <nav class="nav">
-<ul>
-  <li><a href="index.php">Home</a></li>
-  <li><a href="login.html">Login</a></li>
-  <li><a href="Books.php">Books</a></li>
-  <li><a href="account.html">Account</a></li>
-  <li><br></li>
-  <li>Admin Menu</li>
-  <li><a href="addBook.php">Add Book</a></li>
-  <li><a href="Library_Add_Patron1.php">Add Patron</a></li>
-  <BR>
-  <li>Reports</li>
-  <li><a href="CheckoutHistory.php">Checkout History</a></li>
-  <li><a href="itemsIn.php">Items available</a></li>
-  <li><a href="itemsCheckedOut.php">Items checkout</a></li>
-  <br>
-  <li>Tools</li>
-  <li><a href="Library_borrow.php">Book checkout</a></li>
-  <li><a href="bookReturn.php"> Book Return </a></li>
 
-</ul>
 </nav>
 
 <article class="article">
+<!-- Load the sidebar -->
+<?php
+	// Include connection to the DB
+	include_once 'C:\xampp\htdocs\LoginSystemTest\Includes\dbh.inc.php';
 
+	// Run SQL to find if the current user email has admin privileges.
+	@$email = $_SESSION['u_email'];
+	$sql = "SELECT * FROM patron WHERE email = '$email' AND isAdmin = 1";
+	$results = mysqli_query($conn, $sql);
+	$resultCheck = mysqli_num_rows($results);
+			
+	if(isset($_SESSION['u_email']) AND $resultCheck > 0)
+	{
+		// If logged in as an admin, display admin sidebar.
+		//include 'C:\Apache24\htdocs\Login System Test\sidebar_loggedin_admin.php';
+		include 'C:\xampp\htdocs\LoginSystemTest\sidebar_loggedin_admin.php';
+	}
+	else if(isset($_SESSION['u_email']))
+	{
+		include 'C:\xampp\htdocs\LoginSystemTest\sidebar_loggedin.php';
+	}
+	else 
+	{
+		include 'C:\xampp\htdocs\LoginSystemTest\sidebar_notloggedin.php';
+	};
+?>
 
 
 <h2>Items Available For Checkout </h2>
